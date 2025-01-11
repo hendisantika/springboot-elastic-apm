@@ -33,7 +33,7 @@ public class PaymentsController {
     @PostMapping(value = "/payments/json")
     public Map<String, Object> json(@RequestBody Map<String, Object> body) {
         log.info("body = {}", body);
-        return new HashMap<String, Object>(1) {{
+        return new HashMap<>(1) {{
             put("id", UUID.randomUUID().toString());
         }};
     }
