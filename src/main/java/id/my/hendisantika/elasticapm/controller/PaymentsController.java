@@ -2,6 +2,7 @@ package id.my.hendisantika.elasticapm.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED_VALUE;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,5 +36,11 @@ public class PaymentsController {
         return new HashMap<String, Object>(1) {{
             put("id", UUID.randomUUID().toString());
         }};
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(value = "/payments/form", consumes = APPLICATION_FORM_URLENCODED_VALUE)
+    public void form(@RequestBody MultiValueMap<String, Object> body) {
+        log.info("body = {}", body);
     }
 }
