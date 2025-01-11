@@ -1,7 +1,16 @@
 package id.my.hendisantika.elasticapm.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,4 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class PaymentsController {
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    @PostMapping(value = "/payments/json")
+    public Map<String, Object> json(@RequestBody Map<String, Object> body) {
+        log.info("body = {}", body);
+        return new HashMap<String, Object>(1) {{
+            put("id", UUID.randomUUID().toString());
+        }};
+    }
 }
