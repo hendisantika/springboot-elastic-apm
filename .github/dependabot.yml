@@ -15,8 +15,8 @@ updates:
       - dependencies
       - java
     commit-message:
-      prefix: "chore(deps)"
-      prefix-development: "chore(deps-dev)"
+      prefix: "chore"
+      prefix-development: "test"
       include: scope
     groups:
       spring-boot:
@@ -54,7 +54,7 @@ updates:
       - dependencies
       - github-actions
     commit-message:
-      prefix: "ci(deps)"
+      prefix: "ci"
       include: scope
     groups:
       github-actions:
@@ -77,7 +77,7 @@ updates:
       - dependencies
       - docker
     commit-message:
-      prefix: "chore(docker)"
+      prefix: "build"
       include: scope
     # apm-server.yml / kibana.yml / logstash.conf are written for Elastic 7.x,
     # so skip major bumps that would require config migration.

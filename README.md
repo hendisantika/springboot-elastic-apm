@@ -113,4 +113,4 @@ Configured in [`.github/dependabot.yml`](.github/dependabot.yml):
 | `docker-compose` | Weekly (Monday), 05:00   | `elastic-stack` (major bumps ignored — configs are for Elastic 7.x)  |
 
 PRs are labeled (`dependencies`, `java`, `github-actions`, `docker`), assigned to the maintainer, and use
-conventional commit prefixes (`chore(deps)`, `ci(deps)`, `chore(docker)`).
+conventional commit messages (`chore(deps): …`, `ci(deps): …`, `build(deps): …`).
