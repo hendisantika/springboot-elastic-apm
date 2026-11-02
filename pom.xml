@@ -14,7 +14,7 @@
     <name>springboot-elastic-apm</name>
     <description>springboot-elastic-apm</description>
     <properties>
-        <java.version>23</java.version>
+        <java.version>25</java.version>
         <lombok.version>1.18.48</lombok.version>
     </properties>
     <dependencies>
