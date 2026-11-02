@@ -1,6 +1,6 @@
 services:
   beat:
-    image: docker.elastic.co/apm/apm-server:7.1.1
+    image: docker.elastic.co/apm/apm-server:7.17.29
     ports:
       - "8300:8300"
       - "8201:8300"
@@ -11,7 +11,7 @@ services:
     depends_on:
       - logstash
   logstash:
-    image: logstash:7.1.1
+    image: logstash:7.17.28
     ports:
       - "5044:5044"
     links:
